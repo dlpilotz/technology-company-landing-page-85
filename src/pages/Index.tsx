@@ -12,20 +12,20 @@ const Index = () => {
       <section className="pt-32 pb-24 bg-hero-gradient">
         <div className="container mx-auto text-center text-white">
           <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6">
-            OPEN SOURCE
+            IT MANAGED
             <br />
-            DATABASE
+            SERVICES
           </h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-blue-50">
-            The leading cloud database service on the market, with unmatched data
-            distribution and mobility across AWS, Azure, and Google Cloud.
+            Comprehensive IT solutions tailored for your business. From network infrastructure
+            to cybersecurity, we deliver enterprise-grade managed services across all platforms.
           </p>
           <div className="flex justify-center space-x-4">
             <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
               Get Started
             </Button>
             <Button size="lg" variant="outline" className="text-white border-white bg-transparent hover:bg-white/10">
-              Documentation
+              Our Services
             </Button>
           </div>
         </div>
@@ -39,19 +39,19 @@ const Index = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <FeatureCard
-              title="Clustering"
-              description="Horizontal scalability with built-in auto-sharding to millions of nodes with automatic, synchronous replication for high availability."
-              icon={Database}
+              title="Network Management"
+              description="24/7 network monitoring, maintenance, and optimization ensuring maximum uptime and performance for your business operations."
+              icon={Network}
             />
             <FeatureCard
-              title="Persistence"
-              description="Keeps the dataset in memory for fast access, but can persist writes to permanent storage to survive reboots and system failures."
+              title="Cloud Solutions"
+              description="Seamless cloud integration and management across multiple platforms, providing scalability and reliability for your infrastructure."
               icon={Server}
             />
             <FeatureCard
-              title="Data structures"
-              description="Well-known as a 'data structure server', supports lists, sets, sorted sets, hashes, bit arrays and more. Fast and efficient."
-              icon={Network}
+              title="Cybersecurity"
+              description="Comprehensive security solutions including threat detection, prevention, and response to protect your valuable business assets."
+              icon={Database}
             />
           </div>
         </div>
@@ -66,18 +66,18 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
               <Users className="w-12 h-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">50K+</h3>
-              <p className="text-blue-100">Active Developers</p>
+              <h3 className="text-xl font-semibold text-white mb-2">500+</h3>
+              <p className="text-blue-100">Active Clients</p>
             </div>
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
               <Code className="w-12 h-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">1M+</h3>
-              <p className="text-blue-100">Lines of Code</p>
+              <h3 className="text-xl font-semibold text-white mb-2">24/7</h3>
+              <p className="text-blue-100">Support Available</p>
             </div>
             <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
               <Globe className="w-12 h-12 text-white mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-2">100+</h3>
-              <p className="text-blue-100">Countries</p>
+              <h3 className="text-xl font-semibold text-white mb-2">15+</h3>
+              <p className="text-blue-100">Years Experience</p>
             </div>
           </div>
         </div>
@@ -88,22 +88,23 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-mono font-bold mb-6 text-blue-600">/INTEGRATE</h2>
+              <h2 className="text-3xl font-mono font-bold mb-6 text-blue-600">/SOLUTIONS</h2>
               <p className="text-lg text-blue-600/80 mb-8">
-                Seamlessly integrate with your existing tech stack using our comprehensive API and extensive documentation. Support for multiple programming languages and frameworks.
+                Tailored IT solutions designed to meet your specific business needs. Our comprehensive
+                service portfolio ensures your technology infrastructure runs at peak efficiency.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                  <p className="text-blue-600">RESTful API endpoints</p>
+                  <p className="text-blue-600">Proactive IT Management</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                  <p className="text-blue-600">WebSocket support</p>
+                  <p className="text-blue-600">Remote Support Services</p>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
-                  <p className="text-blue-600">GraphQL integration</p>
+                  <p className="text-blue-600">Strategic IT Planning</p>
                 </div>
               </div>
             </div>
@@ -121,7 +122,7 @@ const Index = () => {
       {/* Team Section */}
       <section id="team" className="py-24 bg-blue-600">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-mono font-bold mb-12 text-white">/TEAM</h2>
+          <h2 className="text-3xl font-mono font-bold mb-12 text-white">/EXPERTISE</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="p-6">
               <img
@@ -129,8 +130,8 @@ const Index = () => {
                 alt="Team collaboration"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-lg font-semibold mb-2 text-white">Enterprise Support</h3>
-              <p className="text-blue-100">24/7 dedicated team support</p>
+              <h3 className="text-lg font-semibold mb-2 text-white">24/7 Support</h3>
+              <p className="text-blue-100">Round-the-clock assistance</p>
             </div>
             <div className="p-6">
               <img
@@ -139,7 +140,7 @@ const Index = () => {
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
               <h3 className="text-lg font-semibold mb-2 text-white">AI Integration</h3>
-              <p className="text-blue-100">Advanced ML capabilities</p>
+              <p className="text-blue-100">Smart automation solutions</p>
             </div>
             <div className="p-6">
               <img
@@ -147,8 +148,8 @@ const Index = () => {
                 alt="Technology"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-lg font-semibold mb-2 text-white">Modern Stack</h3>
-              <p className="text-blue-100">Latest tech implementation</p>
+              <h3 className="text-lg font-semibold mb-2 text-white">Infrastructure</h3>
+              <p className="text-blue-100">Enterprise-grade systems</p>
             </div>
             <div className="p-6">
               <img
@@ -156,8 +157,8 @@ const Index = () => {
                 alt="Smart living"
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h3 className="text-lg font-semibold mb-2 text-white">Smart Solutions</h3>
-              <p className="text-blue-100">Intelligent automation</p>
+              <h3 className="text-lg font-semibold mb-2 text-white">Security</h3>
+              <p className="text-blue-100">Advanced protection</p>
             </div>
           </div>
         </div>
