@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="relative w-full z-50 border-b border-white/10">
       <div className="container mx-auto flex items-center justify-between h-16">
         <Link to="/" className="font-mono text-xl font-bold">
-          MaxData
+          Welka Enterprises LLC
         </Link>
         
         <div className="hidden md:flex items-center space-x-6">

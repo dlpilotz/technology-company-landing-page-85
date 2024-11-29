@@ -168,7 +168,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="flex justify-between items-center">
             <p className="text-sm text-blue-600">
-              © 2024 MaxData Inc. All rights reserved.
+              © 2024 Welka Enterprises LLC. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-blue-600 hover:text-blue-700">
