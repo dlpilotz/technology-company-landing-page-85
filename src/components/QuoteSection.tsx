@@ -29,7 +29,7 @@ const QuoteSection = () => {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white to-blue-50">
+    <section id="quote-section" className="py-24 bg-gradient-to-br from-white to-blue-50">
       <div className="container mx-auto max-w-3xl">
         <h2 className="text-3xl font-mono font-bold mb-12 text-center text-blue-600 hover:scale-105 transition-transform">
           /GET A QUOTE TODAY

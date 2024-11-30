@@ -5,9 +5,11 @@ const HeroSection = () => {
   const { toast } = useToast();
 
   const handleGetStarted = () => {
+    const quoteSection = document.getElementById('quote-section');
+    quoteSection?.scrollIntoView({ behavior: 'smooth' });
     toast({
       title: "Welcome aboard!",
-      description: "Our team will contact you shortly to get started.",
+      description: "Please fill out the form below to get started.",
     });
   };
 
