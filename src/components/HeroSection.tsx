@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Shield, Server, Cloud } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
@@ -16,6 +16,18 @@ const HeroSection = () => {
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
     console.log("Particles loaded");
+  }, []);
+
+  useEffect(() => {
+    const video = document.querySelector('video');
+    if (video) {
+      video.play().catch(error => {
+        console.error('Video playback failed:', error);
+      });
+      console.log('Video element found and play attempted');
+    } else {
+      console.log('Video element not found');
+    }
   }, []);
 
   const handleGetStarted = () => {
