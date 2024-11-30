@@ -15,12 +15,12 @@ const TrustIndicators = () => {
     },
     { 
       name: "Veeam", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Veeam_logo.svg", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Veeam_logo.png", 
       alt: "Veeam Partner" 
     },
     { 
       name: "Meraki", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cisco_Meraki_logo.svg", 
+      logo: "https://meraki.cisco.com/wp-content/uploads/2020/04/cisco-meraki-logo.png", 
       alt: "Meraki Partner" 
     },
     { 
@@ -30,7 +30,7 @@ const TrustIndicators = () => {
     },
     { 
       name: "Unifi", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Ubiquiti_Networks_2016.svg", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3d/Ubiquiti_Logo_Horizontal.png", 
       alt: "Unifi Partner" 
     },
     { 
@@ -40,7 +40,7 @@ const TrustIndicators = () => {
     },
     { 
       name: "Juniper", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Juniper_Networks_logo.svg", 
+      logo: "https://lh5.googleusercontent.com/proxy/rRCCVhGBxPmIsnZsKz__hG-TqF4ORN92AvACpY1qFyOLuooWrOaHLjlbcX-YGVzwEsxznmrygiSeHlCch8TGNeAvW4Dof81wxV5HNrUF", 
       alt: "Juniper Partner" 
     }
   ];
