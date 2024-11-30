@@ -18,6 +18,14 @@ const Navbar = () => {
     console.log(`Navigating to section: ${id}`);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    console.log("Scrolling to top");
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <nav className="container mx-auto px-4 flex items-center justify-between h-20">
@@ -29,6 +37,12 @@ const Navbar = () => {
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
+          <button 
+            onClick={scrollToTop} 
+            className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            Home
+          </button>
           <button 
             onClick={() => scrollToSection('features')} 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"

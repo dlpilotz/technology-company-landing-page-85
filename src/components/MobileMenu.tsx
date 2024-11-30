@@ -7,6 +7,14 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    console.log("Mobile menu: Scrolling to top");
+  };
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -17,6 +25,12 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
       </SheetTrigger>
       <SheetContent side="right">
         <nav className="flex flex-col space-y-4 mt-8">
+          <button
+            onClick={scrollToTop}
+            className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
+          >
+            Home
+          </button>
           <button
             onClick={() => onNavigate('features')}
             className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
