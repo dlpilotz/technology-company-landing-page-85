@@ -1,5 +1,6 @@
 import { Shield, Server, Cloud, Network, Database, Users, Code, Globe, Laptop, Lock } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { BreadcrumbNav } from "@/components/Breadcrumb";
 import FeatureCard from "@/components/FeatureCard";
 import HeroSection from "@/components/HeroSection";
 import QuoteSection from "@/components/QuoteSection";
@@ -9,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <HeroSection />
+      <BreadcrumbNav />
       
       {/* Features Section */}
       <section id="features" className="py-24 bg-gradient-to-br from-white to-blue-50">
@@ -225,4 +226,3 @@ const Index = () => {
 };
 
 export default Index;
-
