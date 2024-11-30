@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 interface MobileMenuProps {
   onNavigate: (section: string) => void;
@@ -55,19 +56,29 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
           >
             Team
           </button>
-          <Button 
-            variant="default"
-            className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white w-full justify-start"
-            asChild
-          >
-            <a
-              href="https://support.welkaenterprises.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="space-y-4">
+            <Button 
+              variant="default"
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white w-full justify-start"
+              asChild
             >
-              Help Desk
-            </a>
-          </Button>
+              <a
+                href="https://support.welkaenterprises.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Help Desk
+              </a>
+            </Button>
+            <Separator className="my-2" />
+            <Button 
+              variant="default"
+              className="bg-blue-600 hover:bg-blue-700 text-white w-full justify-start"
+              onClick={() => onNavigate('quote-section')}
+            >
+              Contact Us
+            </Button>
+          </div>
         </nav>
       </SheetContent>
     </Sheet>

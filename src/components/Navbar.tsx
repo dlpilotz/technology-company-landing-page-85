@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
@@ -68,26 +69,29 @@ const Navbar = () => {
           >
             Team
           </button>
-          <Button 
-            variant="default"
-            className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white"
-            asChild
-          >
-            <a 
-              href="https://support.welkaenterprises.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div className="flex items-center space-x-4">
+            <Button 
+              variant="default"
+              className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white"
+              asChild
             >
-              Help Desk
-            </a>
-          </Button>
-          <Button 
-            variant="default"
-            className="bg-blue-600 hover:bg-blue-700 text-white"
-            onClick={() => scrollToSection('quote-section')}
-          >
-            Contact Us
-          </Button>
+              <a
+                href="https://support.welkaenterprises.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Help Desk
+              </a>
+            </Button>
+            <Separator orientation="vertical" className="h-6" />
+            <Button 
+              variant="default"
+              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={() => scrollToSection('quote-section')}
+            >
+              Contact Us
+            </Button>
+          </div>
         </div>
 
         <MobileMenu onNavigate={scrollToSection} />
