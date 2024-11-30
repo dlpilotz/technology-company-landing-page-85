@@ -42,11 +42,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Indicators */}
-      <TrustIndicators />
-
-      {/* Community Section */}
-      <section id="community" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
+      {/* Trust Indicators and Statistics Section */}
+      <section className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-mono font-bold text-white mb-4 hover:scale-105 transition-transform">
             /TRUSTED BY BUSINESSES
@@ -54,7 +51,7 @@ const Index = () => {
           <p className="text-blue-100 mb-12 max-w-2xl mx-auto">
             Join hundreds of Cleveland businesses that trust us with their IT infrastructure
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="stats-card p-8 rounded-lg bg-white/10 backdrop-blur">
               <Users className="w-12 h-12 text-white mx-auto mb-4" />
               <h3 className="text-3xl font-bold text-white mb-2">500+</h3>
@@ -71,6 +68,9 @@ const Index = () => {
               <p className="text-blue-100">Years Experience</p>
             </div>
           </div>
+          
+          {/* Partner Logos */}
+          <TrustIndicators />
         </div>
       </section>
 
