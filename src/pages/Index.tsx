@@ -1,16 +1,15 @@
-import { Shield, Server, Cloud, Network, Database, Users, Code, Globe, Laptop, Lock } from "lucide-react";
+import { Shield, Server, Cloud, Network, Database, Users, Code, Globe } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import { BreadcrumbNav } from "@/components/Breadcrumb";
 import FeatureCard from "@/components/FeatureCard";
 import HeroSection from "@/components/HeroSection";
 import QuoteSection from "@/components/QuoteSection";
 import TrustIndicators from "@/components/TrustIndicators";
+import SolutionsSection from "@/components/SolutionsSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white pt-20">
       <Navbar />
-      {/* Breadcrumb removed from home page */}
       
       <HeroSection />
 
@@ -75,47 +74,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="integrate" className="py-24 bg-white">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-mono font-bold mb-6 text-blue-600">/SOLUTIONS</h2>
-              <p className="text-lg text-blue-600/80 mb-8">
-                Enterprise-grade IT solutions designed to meet your specific business needs. Our comprehensive
-                service portfolio ensures your technology infrastructure runs at peak efficiency.
-              </p>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="rounded-full bg-blue-600/10 p-2">
-                    <Laptop className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <p className="text-blue-600">Proactive IT Management</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="rounded-full bg-blue-600/10 p-2">
-                    <Server className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <p className="text-blue-600">Remote Support Services</p>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="rounded-full bg-blue-600/10 p-2">
-                    <Lock className="h-5 w-5 text-blue-600" />
-                  </div>
-                  <p className="text-blue-600">Strategic IT Planning</p>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-transparent rounded-lg"></div>
-              <img
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7"
-                alt="Code on screen"
-                className="rounded-lg shadow-2xl"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SolutionsSection />
 
       {/* Team Section */}
       <section id="team" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
