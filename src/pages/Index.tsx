@@ -14,15 +14,22 @@ const Index = () => {
       <HeroSection />
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-gradient-to-br from-white to-blue-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-mono font-bold mb-4 text-center text-blue-600 hover:scale-105 transition-transform">
+      <section id="features" className="py-24 bg-gradient-to-br from-gray-900 to-blue-900 relative overflow-hidden">
+        {/* Background Grid Pattern */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        
+        {/* Glowing Orb Effect */}
+        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto relative z-10">
+          <h2 className="text-3xl font-mono font-bold mb-4 text-center text-white hover:scale-105 transition-transform">
             /CAPABILITIES
           </h2>
-          <p className="text-center text-blue-600/80 mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-blue-100 mb-16 max-w-2xl mx-auto">
             Comprehensive IT solutions designed to protect, optimize, and scale your business infrastructure
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 px-4">
             <FeatureCard
               title="Network Management"
               description="24/7 network monitoring, maintenance, and optimization ensuring maximum uptime and performance for your business operations."
@@ -187,3 +194,4 @@ const Index = () => {
 };
 
 export default Index;
+
