@@ -24,7 +24,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right">
+      <SheetContent side="right" className="w-[300px] bg-white">
         <nav className="flex flex-col space-y-4 mt-8">
           <button
             onClick={scrollToTop}
