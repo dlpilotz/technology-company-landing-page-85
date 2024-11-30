@@ -1,67 +1,19 @@
 import { Database, Server, Network, Users, Code, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
 import Navbar from "@/components/Navbar";
 import FeatureCard from "@/components/FeatureCard";
-import { useState } from "react";
+import HeroSection from "@/components/HeroSection";
+import QuoteSection from "@/components/QuoteSection";
 
 const Index = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Quote form submitted:", formData);
-    toast({
-      title: "Quote Request Received",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
+      <HeroSection />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-24 bg-hero-gradient">
-        <div className="container mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6">
-            IT MANAGED
-            <br />
-            SERVICES
-          </h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-blue-50">
-            Comprehensive IT solutions tailored for your business. From network infrastructure
-            to cybersecurity, we deliver enterprise-grade managed services across all platforms.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Get Started
-            </Button>
-            <Button size="lg" variant="outline" className="text-white border-white bg-transparent hover:bg-white/10">
-              Our Services
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Features Section */}
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24 bg-gradient-to-br from-white to-blue-50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-mono font-bold mb-12 text-center text-blue-600">
+          <h2 className="text-3xl font-mono font-bold mb-12 text-center text-blue-600 hover:scale-105 transition-transform">
             /CAPABILITIES
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -85,23 +37,23 @@ const Index = () => {
       </section>
 
       {/* Community Section */}
-      <section id="community" className="py-24 bg-blue-600">
+      <section id="community" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-mono font-bold text-white mb-12">
+          <h2 className="text-3xl font-mono font-bold text-white mb-12 hover:scale-105 transition-transform">
             /COMMUNITY
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
+            <div className="stats-card p-6 rounded-lg bg-white/10 backdrop-blur">
               <Users className="w-12 h-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">500+</h3>
               <p className="text-blue-100">Active Clients</p>
             </div>
-            <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
+            <div className="stats-card p-6 rounded-lg bg-white/10 backdrop-blur">
               <Code className="w-12 h-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">24/7</h3>
               <p className="text-blue-100">Support Available</p>
             </div>
-            <div className="p-6 rounded-lg bg-white/10 backdrop-blur">
+            <div className="stats-card p-6 rounded-lg bg-white/10 backdrop-blur">
               <Globe className="w-12 h-12 text-white mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-white mb-2">15+</h3>
               <p className="text-blue-100">Years Experience</p>
@@ -110,7 +62,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Integration Section */}
       <section id="integrate" className="py-24 bg-white">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -191,93 +142,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quote Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto max-w-3xl">
-          <h2 className="text-3xl font-mono font-bold mb-12 text-center text-blue-600">
-            /GET A QUOTE TODAY
-          </h2>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  required
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="john@company.com"
-                  required
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="company" className="text-sm font-medium">
-                Company
-              </label>
-              <Input
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                placeholder="Your Company Name"
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tell us about your IT needs..."
-                className="min-h-[120px]"
-                required
-              />
-            </div>
-            <div className="flex justify-center">
-              <Button type="submit" size="lg" className="w-full md:w-auto">
-                Request Quote
-              </Button>
-            </div>
-          </form>
-        </div>
-      </section>
+      <QuoteSection />
 
       {/* Footer */}
-      <footer className="bg-white border-t border-blue-100 py-12">
+      <footer className="bg-gradient-to-br from-white to-blue-50 border-t border-blue-100 py-12">
         <div className="container mx-auto">
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-blue-600">
               © 2024 Welka Enterprises LLC. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-blue-600 hover:text-blue-700">
+              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
                 Twitter
               </a>
-              <a href="#" className="text-blue-600 hover:text-blue-700">
+              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
                 GitHub
               </a>
-              <a href="#" className="text-blue-600 hover:text-blue-700">
+              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
                 Discord
               </a>
             </div>
