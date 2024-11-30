@@ -35,7 +35,20 @@ const QuoteSection = () => {
           /GET A QUOTE TODAY
         </h2>
         <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            onSubmit={handleSubmit} 
+            className="space-y-6"
+            data-netlify="true"
+            name="quote-request"
+            method="POST"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="quote-request" />
+            <p className="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
