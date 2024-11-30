@@ -80,24 +80,27 @@ const TrustIndicators = () => {
         {/* Technology Partners */}
         <div className="mb-16">
           <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/TECHNOLOGY PARTNERS</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {partners.map((partner) => (
-              <div 
-                key={partner.name} 
-                className="flex items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow"
-              >
-                <img 
-                  src={partner.logo} 
-                  alt={partner.alt} 
-                  className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
-                  onError={(e) => {
-                    console.error(`Failed to load image for ${partner.name}`);
-                    e.currentTarget.src = "https://via.placeholder.com/150x50?text=" + partner.name;
-                  }}
-                />
-              </div>
-            ))}
-          </div>
+          <Carousel className="max-w-4xl mx-auto">
+            <CarouselContent>
+              {partners.map((partner) => (
+                <CarouselItem key={partner.name} className="md:basis-1/3 lg:basis-1/4">
+                  <div className="p-6 flex items-center justify-center h-32">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.alt} 
+                      className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                      onError={(e) => {
+                        console.error(`Failed to load image for ${partner.name}`);
+                        e.currentTarget.src = "https://via.placeholder.com/150x50?text=" + partner.name;
+                      }}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
         </div>
 
         {/* Certifications */}
