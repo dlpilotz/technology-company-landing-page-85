@@ -69,14 +69,17 @@ const HeroSection = () => {
         autoPlay 
         muted 
         loop 
-        className="absolute inset-0 w-full h-full object-cover opacity-10"
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-20"
+        style={{ zIndex: 0 }}
       >
         <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-keyboard-1584/1080p.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
       
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-blue-700/90 to-blue-800/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-blue-700/80 to-blue-800/80" style={{ zIndex: 1 }}></div>
       
-      <div className="container relative mx-auto text-center text-white">
+      <div className="container relative mx-auto text-center text-white" style={{ zIndex: 2 }}>
         <div className="flex justify-center gap-8 mb-8">
           <Shield className="w-12 h-12 text-blue-200 animate-bounce" />
           <Server className="w-12 h-12 text-blue-200 animate-pulse" />
