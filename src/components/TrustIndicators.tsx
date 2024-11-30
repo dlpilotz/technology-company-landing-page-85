@@ -3,9 +3,46 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 const TrustIndicators = () => {
   const partners = [
-    { name: "Microsoft", logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", alt: "Microsoft Partner" },
-    { name: "Cisco", logo: "https://images.unsplash.com/photo-1518770660439-4636190af475", alt: "Cisco Partner" },
-    { name: "Dell", logo: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6", alt: "Dell Partner" },
+    { 
+      name: "Microsoft", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg", 
+      alt: "Microsoft Partner" 
+    },
+    { 
+      name: "Cisco", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg", 
+      alt: "Cisco Partner" 
+    },
+    { 
+      name: "Veeam", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Veeam_logo.svg", 
+      alt: "Veeam Partner" 
+    },
+    { 
+      name: "Meraki", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cisco_Meraki_logo.svg", 
+      alt: "Meraki Partner" 
+    },
+    { 
+      name: "Sophos", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Sophos_logo2.svg", 
+      alt: "Sophos Partner" 
+    },
+    { 
+      name: "Unifi", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Ubiquiti_Networks_2016.svg", 
+      alt: "Unifi Partner" 
+    },
+    { 
+      name: "Fortinet", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/6/62/Fortinet_logo.svg", 
+      alt: "Fortinet Partner" 
+    },
+    { 
+      name: "Juniper", 
+      logo: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Juniper_Networks_logo.svg", 
+      alt: "Juniper Partner" 
+    }
   ];
 
   const certifications = [
@@ -27,10 +64,21 @@ const TrustIndicators = () => {
         {/* Technology Partners */}
         <div className="mb-16">
           <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/TECHNOLOGY PARTNERS</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {partners.map((partner) => (
-              <div key={partner.name} className="flex items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <img src={partner.logo} alt={partner.alt} className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all" />
+              <div 
+                key={partner.name} 
+                className="flex items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.alt} 
+                  className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all"
+                  onError={(e) => {
+                    console.error(`Failed to load image for ${partner.name}`);
+                    e.currentTarget.src = "https://via.placeholder.com/150x50?text=" + partner.name;
+                  }}
+                />
               </div>
             ))}
           </div>
