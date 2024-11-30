@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Shield, Server, Cloud } from "lucide-react";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
@@ -16,18 +16,6 @@ const HeroSection = () => {
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
     console.log("Particles loaded");
-  }, []);
-
-  useEffect(() => {
-    const video = document.querySelector('video');
-    if (video) {
-      video.play().catch(error => {
-        console.error('Video playback failed:', error.message);
-      });
-      console.log('Video element found and play attempted');
-    } else {
-      console.log('Video element not found');
-    }
   }, []);
 
   const handleGetStarted = () => {
@@ -76,20 +64,6 @@ const HeroSection = () => {
           }
         }}
       />
-      
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-20"
-        style={{ zIndex: 0 }}
-        onLoadedData={() => console.log('Video loaded successfully')}
-        onError={() => console.error('Video loading error: Failed to load video')}
-      >
-        <source src="https://cdn.coverr.co/videos/coverr-computer-coding-2683/1080p.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-blue-700/80 to-blue-800/80" style={{ zIndex: 1 }}></div>
       
