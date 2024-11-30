@@ -55,6 +55,14 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
           >
             Team
           </button>
+          <a
+            href="https://support.welkaenterprises.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
+          >
+            Help Desk
+          </a>
         </nav>
       </SheetContent>
     </Sheet>
