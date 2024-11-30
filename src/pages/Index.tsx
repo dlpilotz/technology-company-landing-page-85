@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import FeatureCard from "@/components/FeatureCard";
 import HeroSection from "@/components/HeroSection";
 import QuoteSection from "@/components/QuoteSection";
+import TrustIndicators from "@/components/TrustIndicators";
 
 const Index = () => {
   return (
@@ -38,6 +39,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Trust Indicators */}
+      <TrustIndicators />
 
       {/* Community Section */}
       <section id="community" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
