@@ -22,7 +22,7 @@ const HeroSection = () => {
     const video = document.querySelector('video');
     if (video) {
       video.play().catch(error => {
-        console.error('Video playback failed:', error);
+        console.error('Video playback failed:', error.message);
       });
       console.log('Video element found and play attempted');
     } else {
@@ -85,7 +85,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-20"
         style={{ zIndex: 0 }}
         onLoadedData={() => console.log('Video loaded successfully')}
-        onError={(e) => console.error('Video loading error:', e)}
+        onError={() => console.error('Video loading error: Failed to load video')}
       >
         <source src="https://cdn.coverr.co/videos/coverr-computer-coding-2683/1080p.mp4" type="video/mp4" />
         Your browser does not support the video tag.
