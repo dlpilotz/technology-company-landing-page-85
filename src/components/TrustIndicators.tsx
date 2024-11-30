@@ -75,10 +75,10 @@ const TrustIndicators = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Technology Partners */}
-        <div className="mb-16">
+    <div>
+      {/* Technology Partners */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-white">
+        <div className="container mx-auto px-4">
           <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/TECHNOLOGY PARTNERS</h3>
           <Carousel className="max-w-4xl mx-auto">
             <CarouselContent>
@@ -102,22 +102,26 @@ const TrustIndicators = () => {
             <CarouselNext />
           </Carousel>
         </div>
+      </section>
 
-        {/* Certifications */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/CERTIFICATIONS</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+      {/* Certifications */}
+      <section className="py-16 bg-gradient-to-br from-gray-900 to-blue-900">
+        <div className="container mx-auto px-4">
+          <h3 className="text-2xl font-mono font-bold text-white mb-8 text-center">/CERTIFICATIONS</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {certifications.map((cert) => (
-              <div key={cert.name} className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <cert.icon className="h-8 w-8 text-blue-600 mb-3" />
-                <span className="text-sm font-semibold text-gray-700">{cert.name}</span>
+              <div key={cert.name} className="flex flex-col items-center p-6 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all">
+                <cert.icon className="h-8 w-8 text-blue-300 mb-3" />
+                <span className="text-sm font-semibold text-white">{cert.name}</span>
               </div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Client Logos Carousel */}
-        <div>
+      {/* Client Logos */}
+      <section className="py-16 bg-gradient-to-br from-white to-blue-50">
+        <div className="container mx-auto px-4">
           <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/TRUSTED BY</h3>
           <Carousel className="max-w-xl mx-auto">
             <CarouselContent>
@@ -137,8 +141,8 @@ const TrustIndicators = () => {
             <CarouselNext />
           </Carousel>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
