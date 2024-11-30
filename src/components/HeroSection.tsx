@@ -73,7 +73,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover opacity-20"
         style={{ zIndex: 0 }}
       >
-        <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-keyboard-1584/1080p.mp4" type="video/mp4" />
+        <source src="https://assets.mixkit.co/videos/preview/mixkit-typing-on-a-keyboard-in-an-office-environment-42725-large.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
