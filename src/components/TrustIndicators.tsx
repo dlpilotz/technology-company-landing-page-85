@@ -113,25 +113,6 @@ const TrustIndicators = () => {
           </div>
         </div>
 
-        {/* System Status */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/SYSTEM STATUS</h3>
-          <div className="flex justify-center space-x-8">
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-600">Network: Online</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-600">Security: Active</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm text-gray-600">Cloud: Operational</span>
-            </div>
-          </div>
-        </div>
-
         {/* Client Logos Carousel */}
         <div>
           <h3 className="text-2xl font-mono font-bold text-blue-600 mb-8 text-center">/TRUSTED BY</h3>
