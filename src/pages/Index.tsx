@@ -14,13 +14,13 @@ const Index = () => {
       <HeroSection />
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-gradient-to-br from-gray-900 to-blue-900 relative overflow-hidden">
-        {/* Background Grid Pattern */}
+      <section id="features" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
+        {/* Subtle Grid Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         
-        {/* Glowing Orb Effect */}
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-purple-500/20 rounded-full blur-3xl"></div>
+        {/* Subtle Glow Effects */}
+        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-300/10 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto relative z-10">
           <h2 className="text-3xl font-mono font-bold mb-4 text-center text-white hover:scale-105 transition-transform">
@@ -194,4 +194,3 @@ const Index = () => {
 };
 
 export default Index;
-
