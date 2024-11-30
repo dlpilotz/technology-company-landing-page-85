@@ -11,6 +11,8 @@ const Index = () => {
     <div className="min-h-screen bg-white pt-20">
       <Navbar />
       {/* Breadcrumb removed from home page */}
+      
+      <HeroSection />
 
       {/* Features Section */}
       <section id="features" className="py-24 bg-gradient-to-br from-white to-blue-50">
