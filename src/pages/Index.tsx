@@ -119,47 +119,79 @@ const Index = () => {
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-mono font-bold mb-4 text-white">/EXPERTISE</h2>
           <p className="text-blue-100 mb-12 max-w-2xl mx-auto">
-            Leveraging cutting-edge technology to deliver reliable IT solutions
+            Our team of certified professionals brings decades of combined experience in delivering cutting-edge IT solutions
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="p-6 group">
-              <div className="relative overflow-hidden rounded-lg mb-4">
+            <div className="p-6 group bg-white/5 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent group-hover:from-blue-900/90 transition-colors"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81"
-                  alt="Team collaboration"
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                  alt="24/7 Support"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <h3 className="text-lg font-semibold mb-2 text-white">24/7 Support</h3>
-              <p className="text-blue-100">Round-the-clock assistance</p>
+              <p className="text-blue-100 mb-4">Round-the-clock technical assistance with guaranteed response times</p>
+              <ul className="text-left text-blue-200 text-sm space-y-2">
+                <li>• Emergency Response Team</li>
+                <li>• Live Chat Support</li>
+                <li>• Remote Troubleshooting</li>
+              </ul>
             </div>
-            <div className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e"
-                alt="Robot"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+
+            <div className="p-6 group bg-white/5 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent group-hover:from-blue-900/90 transition-colors"></div>
+                <img
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+                  alt="AI Integration"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               <h3 className="text-lg font-semibold mb-2 text-white">AI Integration</h3>
-              <p className="text-blue-100">Smart automation solutions</p>
+              <p className="text-blue-100 mb-4">Advanced automation and machine learning solutions</p>
+              <ul className="text-left text-blue-200 text-sm space-y-2">
+                <li>• Process Automation</li>
+                <li>• Predictive Analytics</li>
+                <li>• Smart Workflows</li>
+              </ul>
             </div>
-            <div className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1483058712412-4245e9b90334"
-                alt="Technology"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+
+            <div className="p-6 group bg-white/5 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent group-hover:from-blue-900/90 transition-colors"></div>
+                <img
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                  alt="Infrastructure"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               <h3 className="text-lg font-semibold mb-2 text-white">Infrastructure</h3>
-              <p className="text-blue-100">Enterprise-grade systems</p>
+              <p className="text-blue-100 mb-4">Enterprise-grade systems and network solutions</p>
+              <ul className="text-left text-blue-200 text-sm space-y-2">
+                <li>• Cloud Architecture</li>
+                <li>• Network Design</li>
+                <li>• Scalable Solutions</li>
+              </ul>
             </div>
-            <div className="p-6">
-              <img
-                src="https://images.unsplash.com/photo-1721322800607-8c38375eef04"
-                alt="Smart living"
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
+
+            <div className="p-6 group bg-white/5 rounded-lg backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+              <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent group-hover:from-blue-900/90 transition-colors"></div>
+                <img
+                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1"
+                  alt="Security"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
               <h3 className="text-lg font-semibold mb-2 text-white">Security</h3>
-              <p className="text-blue-100">Advanced protection</p>
+              <p className="text-blue-100 mb-4">Advanced protection and threat prevention</p>
+              <ul className="text-left text-blue-200 text-sm space-y-2">
+                <li>• Threat Detection</li>
+                <li>• Data Encryption</li>
+                <li>• Access Control</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -193,3 +225,4 @@ const Index = () => {
 };
 
 export default Index;
+
