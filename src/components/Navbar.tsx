@@ -31,9 +31,10 @@ const Navbar = () => {
       <nav className="container mx-auto px-4 flex items-center justify-between h-20">
         <Link 
           to="/" 
-          className="font-mono text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors"
+          className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
+          onClick={scrollToTop}
         >
-          Welka Enterprises LLC
+          <img src="/logo.svg" alt="Welka Enterprises LLC" className="h-12 w-auto" />
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
