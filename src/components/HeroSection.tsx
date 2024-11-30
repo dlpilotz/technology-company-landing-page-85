@@ -1,9 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { Shield, Server, Cloud } from "lucide-react";
+import { useCallback } from "react";
+import Particles from "react-particles";
+import type { Container, Engine } from "tsparticles-engine";
+import { loadFull } from "tsparticles";
 
 const HeroSection = () => {
   const { toast } = useToast();
+  
+  const particlesInit = useCallback(async (engine: Engine) => {
+    console.log("Initializing particles");
+    await loadFull(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+    console.log("Particles loaded");
+  }, []);
 
   const handleGetStarted = () => {
     const quoteSection = document.getElementById('quote-section');
@@ -19,16 +32,55 @@ const HeroSection = () => {
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const stats = [
+    { value: "99.9%", label: "Uptime" },
+    { value: "24/7", label: "Support" },
+    { value: "15min", label: "Response Time" }
+  ];
+
   return (
-    <section className="relative pt-32 pb-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 animate-gradient overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072')] bg-cover bg-center opacity-10"></div>
+    <section className="relative min-h-screen pt-32 pb-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 animate-gradient overflow-hidden">
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          background: {
+            opacity: 0
+          },
+          particles: {
+            number: { value: 50, density: { enable: true, value_area: 800 } },
+            color: { value: "#ffffff" },
+            opacity: { value: 0.2 },
+            size: { value: 3 },
+            move: {
+              enable: true,
+              speed: 1,
+              direction: "none",
+              random: true,
+              straight: false,
+              outModes: { default: "out" }
+            }
+          }
+        }}
+      />
+      
+      <video 
+        autoPlay 
+        muted 
+        loop 
+        className="absolute inset-0 w-full h-full object-cover opacity-10"
+      >
+        <source src="https://cdn.coverr.co/videos/coverr-typing-on-computer-keyboard-1584/1080p.mp4" type="video/mp4" />
+      </video>
+      
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-blue-700/90 to-blue-800/90"></div>
       
       <div className="container relative mx-auto text-center text-white">
         <div className="flex justify-center gap-8 mb-8">
-          <Shield className="w-12 h-12 text-blue-200" />
-          <Server className="w-12 h-12 text-blue-200" />
-          <Cloud className="w-12 h-12 text-blue-200" />
+          <Shield className="w-12 h-12 text-blue-200 animate-bounce" />
+          <Server className="w-12 h-12 text-blue-200 animate-pulse" />
+          <Cloud className="w-12 h-12 text-blue-200 animate-bounce" />
         </div>
         
         <h1 className="text-5xl md:text-7xl font-mono font-bold mb-6 animate-fade-in">
@@ -36,10 +88,28 @@ const HeroSection = () => {
           <br />
           SERVICES
         </h1>
-        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-8 text-blue-50 animate-fade-in-delayed opacity-0">
+        
+        <p className="text-xl md:text-2xl max-w-2xl mx-auto mb-12 text-blue-50 animate-fade-in-delayed opacity-0">
           Enterprise-grade IT solutions tailored for Cleveland businesses. From network infrastructure
           to cybersecurity, we deliver comprehensive managed services across all platforms.
         </p>
+
+        <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto mb-12">
+          {stats.map((stat, index) => (
+            <div 
+              key={index}
+              className="bg-white/10 p-6 rounded-lg backdrop-blur-sm transform hover:scale-105 transition-all duration-300"
+            >
+              <div className="text-3xl font-bold mb-2 animate-fade-in-delayed opacity-0">
+                {stat.value}
+              </div>
+              <div className="text-blue-200 animate-fade-in-delayed opacity-0">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="flex flex-col md:flex-row justify-center gap-4 animate-fade-in-delayed opacity-0">
           <Button 
             size="lg" 
