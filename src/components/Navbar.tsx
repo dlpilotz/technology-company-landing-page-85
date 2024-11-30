@@ -40,13 +40,6 @@ const Navbar = () => {
             Team
           </button>
         </div>
-
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="sm">
-            Sign In
-          </Button>
-          <Button size="sm">Try Free</Button>
-        </div>
       </div>
     </nav>
   );
