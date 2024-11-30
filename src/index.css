@@ -41,3 +41,9 @@
 .stats-card {
   @apply transition-all duration-300 hover:transform hover:scale-105 hover:bg-white/20;
 }
+
+.bg-grid-pattern {
+  background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+                    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
