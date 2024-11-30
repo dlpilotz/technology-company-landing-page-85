@@ -68,14 +68,19 @@ const Navbar = () => {
           >
             Team
           </button>
-          <a 
-            href="https://support.welkaenterprises.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+          <Button 
+            variant="default"
+            className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white"
+            asChild
           >
-            Help Desk
-          </a>
+            <a 
+              href="https://support.welkaenterprises.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Help Desk
+            </a>
+          </Button>
           <Button 
             variant="default"
             className="bg-blue-600 hover:bg-blue-700 text-white"

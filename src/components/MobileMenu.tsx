@@ -55,14 +55,19 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
           >
             Team
           </button>
-          <a
-            href="https://support.welkaenterprises.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
+          <Button 
+            variant="default"
+            className="bg-[#8B5CF6] hover:bg-[#7C3AED] text-white w-full justify-start"
+            asChild
           >
-            Help Desk
-          </a>
+            <a
+              href="https://support.welkaenterprises.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Help Desk
+            </a>
+          </Button>
         </nav>
       </SheetContent>
     </Sheet>
