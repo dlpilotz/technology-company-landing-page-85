@@ -83,7 +83,7 @@ const Navbar = () => {
                 Help Desk
               </a>
             </Button>
-            <Separator orientation="vertical" className="h-6" />
+            <Separator orientation="vertical" className="h-6 bg-gray-300 w-[2px]" />
             <Button 
               variant="default"
               className="bg-blue-600 hover:bg-blue-700 text-white"

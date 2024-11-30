@@ -70,7 +70,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
                 Help Desk
               </a>
             </Button>
-            <Separator className="my-2" />
+            <Separator className="bg-gray-300 h-[2px]" />
             <Button 
               variant="default"
               className="bg-blue-600 hover:bg-blue-700 text-white w-full justify-start"
