@@ -15,12 +15,33 @@ const QuoteSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Quote form submitted:", formData);
-    toast({
-      title: "Quote Request Received",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    console.log("Form submission started");
+    
+    // Create a hidden form for Netlify
+    const form = e.target as HTMLFormElement;
+    const data = new FormData(form);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(data as any).toString(),
+    })
+      .then(() => {
+        console.log("Form submitted successfully");
+        toast({
+          title: "Quote Request Received",
+          description: "We'll get back to you within 24 hours.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Form submission error:", error);
+        toast({
+          title: "Submission Error",
+          description: "Please try again later or contact us directly.",
+          variant: "destructive",
+        });
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
