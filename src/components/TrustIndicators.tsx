@@ -52,10 +52,26 @@ const TrustIndicators = () => {
   ];
 
   const clients = [
-    { name: "Client 1", logo: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7", alt: "Client 1" },
-    { name: "Client 2", logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d", alt: "Client 2" },
-    { name: "Client 3", logo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158", alt: "Client 3" },
-    { name: "Client 4", logo: "https://images.unsplash.com/photo-1519389950473-47ba0277781c", alt: "Client 4" },
+    { 
+      name: "FlyHouse", 
+      logo: "https://media.licdn.com/dms/image/v2/D560BAQEPImUqsft3zg/company-logo_200_200/company-logo_200_200/0/1729287458696/flyhouse_logo?e=2147483647&v=beta&t=H42B23GEEWhFMAo5Zruk3A3rBq2UBesk-ct8UCPFEM0", 
+      alt: "FlyHouse" 
+    },
+    { 
+      name: "Client 2", 
+      logo: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d", 
+      alt: "Trusted Client" 
+    },
+    { 
+      name: "Client 3", 
+      logo: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b", 
+      alt: "Trusted Client" 
+    },
+    { 
+      name: "Client 4", 
+      logo: "https://images.unsplash.com/photo-1518770660439-4636190af475", 
+      alt: "Trusted Client" 
+    },
   ];
 
   return (
