@@ -49,12 +49,6 @@ const Navbar = () => {
             Solutions
           </Link>
           <Link 
-            to="/resources" 
-            className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
-          >
-            Resources
-          </Link>
-          <Link 
             to="/about" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >

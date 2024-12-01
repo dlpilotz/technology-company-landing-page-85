@@ -38,12 +38,6 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
             Solutions
           </Link>
           <Link
-            to="/resources"
-            className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
-          >
-            Resources
-          </Link>
-          <Link
             to="/about"
             className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
           >
