@@ -33,7 +33,7 @@ const HeroSection = () => {
   };
 
   const stats = [
-    { value: "99.9%", label: "Uptime" },
+    { value: "99.9%", label: "Customer Satisfaction" },
     { value: "24/7", label: "Support" },
     { value: "15min", label: "Response Time" }
   ];
