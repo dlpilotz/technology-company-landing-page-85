@@ -49,12 +49,6 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
           >
             Case Studies
           </Link>
-          <Link
-            to="/blog"
-            className="text-lg font-medium hover:text-primary text-left px-4 py-2 hover:bg-blue-50 rounded-md transition-colors"
-          >
-            Blog
-          </Link>
           <div className="space-y-4">
             <Button 
               variant="default"
