@@ -19,56 +19,59 @@ const Navbar = () => {
     console.log(`Navigating to section: ${id}`);
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-    console.log("Scrolling to top");
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <nav className="container mx-auto px-4 flex items-center justify-between h-20">
         <Link 
           to="/" 
           className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
-          onClick={scrollToTop}
         >
           <img src="/logo.svg" alt="Welka Enterprises LLC" className="h-12 w-auto" />
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={scrollToTop} 
+          <Link 
+            to="/" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Home
-          </button>
-          <button 
-            onClick={() => scrollToSection('features')} 
+          </Link>
+          <Link 
+            to="/products" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Products
-          </button>
-          <button 
-            onClick={() => scrollToSection('integrate')} 
+          </Link>
+          <Link 
+            to="/solutions" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Solutions
-          </button>
-          <button 
-            onClick={() => scrollToSection('community')} 
+          </Link>
+          <Link 
+            to="/resources" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
             Resources
-          </button>
-          <button 
-            onClick={() => scrollToSection('team')} 
+          </Link>
+          <Link 
+            to="/about" 
             className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
           >
-            Team
-          </button>
+            About
+          </Link>
+          <Link 
+            to="/case-studies" 
+            className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            Case Studies
+          </Link>
+          <Link 
+            to="/blog" 
+            className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors"
+          >
+            Blog
+          </Link>
           <div className="flex items-center space-x-4">
             <Button 
               variant="default"
