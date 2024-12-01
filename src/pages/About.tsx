@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { Building2, Users, HeartPulse, HandShake } from "lucide-react";
+import { Building2, Users, HeartPulse, Handshake } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -23,7 +23,7 @@ const About = () => {
       description: "Working together with our clients to achieve their technology goals."
     },
     {
-      icon: HandShake,
+      icon: Handshake,
       title: "Trust",
       description: "Building lasting relationships through reliability and transparency."
     },
