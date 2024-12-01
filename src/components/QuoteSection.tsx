@@ -80,12 +80,20 @@ const QuoteSection = () => {
             />
           </div>
 
+          {/* Add the hidden form for Netlify form detection */}
+          <form name="quote-request" data-netlify="true" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="text" name="company" />
+            <textarea name="message"></textarea>
+          </form>
+
           <form 
             onSubmit={handleSubmit} 
             className="space-y-6 relative"
-            data-netlify="true"
             name="quote-request"
             method="POST"
+            data-netlify="true"
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="quote-request" />
