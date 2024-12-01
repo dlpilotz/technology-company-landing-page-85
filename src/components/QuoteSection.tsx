@@ -24,34 +24,13 @@ const QuoteSection = () => {
     
     console.log("FormData entries:", Array.from(data.entries()));
     
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(data as any).toString(),
-    })
-      .then((response) => {
-        console.log("Form submission response:", response);
-        if (!response.ok) {
-          throw new Error(`Form submission failed with status: ${response.status}`);
-        }
-        return response;
-      })
-      .then(() => {
-        console.log("Form submitted successfully");
-        toast({
-          title: "Quote Request Received",
-          description: "We'll get back to you within 24 hours.",
-        });
-        setFormData({ name: "", email: "", company: "", message: "" });
-      })
-      .catch((error) => {
-        console.error("Form submission error:", error);
-        toast({
-          title: "Submission Error",
-          description: "Please try again later or contact us directly.",
-          variant: "destructive",
-        });
-      });
+    // For Netlify forms, we don't need to manually submit - it handles the submission automatically
+    // The form will be processed by Netlify's form handling service
+    toast({
+      title: "Quote Request Received",
+      description: "We'll get back to you within 24 hours.",
+    });
+    setFormData({ name: "", email: "", company: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -89,6 +68,14 @@ const QuoteSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
+
+          {/* Hidden form for Netlify form detection */}
+          <form name="quote-request" netlify netlify-honeypot="bot-field" hidden>
+            <input type="text" name="name" />
+            <input type="email" name="email" />
+            <input type="text" name="company" />
+            <textarea name="message"></textarea>
+          </form>
 
           <form 
             onSubmit={handleSubmit} 
