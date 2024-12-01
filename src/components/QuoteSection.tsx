@@ -16,16 +16,26 @@ const QuoteSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submission started");
+    console.log("Form data:", formData);
     
     // Create a hidden form for Netlify
     const form = e.target as HTMLFormElement;
     const data = new FormData(form);
+    
+    console.log("FormData entries:", Array.from(data.entries()));
     
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(data as any).toString(),
     })
+      .then((response) => {
+        console.log("Form submission response:", response);
+        if (!response.ok) {
+          throw new Error(`Form submission failed with status: ${response.status}`);
+        }
+        return response;
+      })
       .then(() => {
         console.log("Form submitted successfully");
         toast({
@@ -79,14 +89,6 @@ const QuoteSection = () => {
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Add the hidden form for Netlify form detection */}
-          <form name="quote-request" data-netlify="true" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <input type="text" name="company" />
-            <textarea name="message"></textarea>
-          </form>
 
           <form 
             onSubmit={handleSubmit} 
