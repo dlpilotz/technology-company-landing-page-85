@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import { Shield, Server, Cloud, Database, Laptop, Network, Lock, HeadsetHelp, Cog } from "lucide-react";
+import { Shield, Server, Cloud, Database, Laptop, Network, Lock, Headphones, Cog } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Products = () => {
@@ -40,7 +40,7 @@ const Products = () => {
       image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334"
     },
     {
-      icon: HeadsetHelp,
+      icon: Headphones,
       title: "IT Support",
       description: "24/7 technical support and help desk services for your entire organization.",
       features: ["Help Desk", "Remote Support", "On-site Support"],
