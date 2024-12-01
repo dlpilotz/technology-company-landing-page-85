@@ -11,3 +11,13 @@ Crawl-delay: 10
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+
+# Allow specific paths
+Allow: /products/
+Allow: /solutions/
+Allow: /case-studies/
+Allow: /about/
+Allow: /resources/
+
+# Rate limiting
+Request-rate: 1/1s
