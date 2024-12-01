@@ -52,17 +52,17 @@ const Products = () => {
     <div className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-white">
       <Navbar />
       
-      <main className="container mx-auto px-4 py-16">
-        <div className="space-y-8">
+      <main className="container mx-auto px-4 pt-28 pb-16">
+        <div className="space-y-12">
           {/* Header Section */}
-          <div className="text-center space-y-4 animate-fade-in">
-            <h1 className="text-4xl font-mono font-bold text-blue-600 relative inline-block">
-              /PRODUCTS & SERVICES
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-blue-600 transform origin-left"></span>
+          <div className="text-center space-y-6 animate-fade-in">
+            <h1 className="text-5xl font-bold text-blue-900 relative inline-block">
+              Our Products & Services
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-1/3 h-1 bg-blue-600"></div>
             </h1>
-            <p className="text-xl text-blue-600/80 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-600/80 max-w-3xl mx-auto leading-relaxed">
               Comprehensive IT solutions designed to transform your business operations
-              and drive technological excellence.
+              and drive technological excellence in the modern digital landscape.
             </p>
           </div>
 
@@ -71,36 +71,42 @@ const Products = () => {
             {products.map((product, index) => (
               <Card 
                 key={index}
-                className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white/80 backdrop-blur-sm animate-fade-in"
+                className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 bg-white/90 backdrop-blur-sm animate-fade-in border-blue-100 overflow-hidden"
               >
-                <CardHeader>
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                
+                <CardHeader className="relative z-10">
                   <div className="flex items-center space-x-4">
                     <div className="rounded-full bg-blue-600/10 p-3 group-hover:bg-blue-600/20 transition-colors duration-300">
                       <product.icon className="h-6 w-6 text-blue-600" />
                     </div>
-                    <CardTitle className="text-xl text-blue-900">{product.title}</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-blue-900">{product.title}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <CardDescription className="text-blue-600/80">
+                
+                <CardContent className="space-y-6">
+                  <CardDescription className="text-blue-600/80 text-lg">
                     {product.description}
                   </CardDescription>
-                  <div className="relative h-40 rounded-lg overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="space-y-3">
+                    <h4 className="font-semibold text-blue-900">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {product.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center space-x-2 text-blue-600/80 group-hover:text-blue-700 transition-colors">
+                          <Cog className="h-4 w-4 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <ul className="space-y-2">
-                    {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-sm text-blue-600/80">
-                        <Cog className="h-4 w-4" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </CardContent>
               </Card>
             ))}
