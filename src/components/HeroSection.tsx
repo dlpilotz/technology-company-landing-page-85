@@ -69,7 +69,7 @@ const HeroSection = () => {
           onLoadedData={handleVideoLoad}
         >
           <source
-            src="/datacenter.mp4"
+            src="/hero_video.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
