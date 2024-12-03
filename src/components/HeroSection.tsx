@@ -63,14 +63,13 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          crossOrigin="anonymous"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.3)' }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoad}
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-close-up-of-server-led-lights-1584/1080p.mp4"
+            src="/datacenter.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
