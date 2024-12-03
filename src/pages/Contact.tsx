@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
+import { Mail, Building2, Phone, User } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -20,7 +21,6 @@ const Contact = () => {
     console.log("Form submission started");
     
     try {
-      // Create a hidden form for Netlify
       const form = e.target as HTMLFormElement;
       const data = new FormData(form);
       
@@ -31,7 +31,6 @@ const Contact = () => {
         description: "We'll get back to you as soon as possible.",
       });
       
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -56,95 +55,119 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
       <Navbar />
       
       <div className="pt-24 pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-4xl font-mono font-bold text-blue-600 mb-4 text-center">
-              Contact Us
-            </h1>
-            <p className="text-gray-600 text-center mb-8">
-              Get in touch with our IT experts to discuss your business needs
-            </p>
+            <div className="text-center mb-12 animate-fade-in">
+              <h1 className="text-4xl font-mono font-bold text-blue-600 mb-4">
+                Get In Touch
+              </h1>
+              <p className="text-gray-600 max-w-xl mx-auto">
+                Let us help transform your business with our expert IT solutions. Fill out the form below and we'll get back to you shortly.
+              </p>
+            </div>
 
-            <div className="bg-white shadow-xl rounded-lg p-8">
+            <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-2xl p-8 animate-fade-in-delayed hover:shadow-blue-100/50 transition-all duration-500">
+              {/* Background pattern */}
+              <div className="absolute inset-0 opacity-5 rounded-2xl overflow-hidden">
+                <div className="bg-grid-pattern w-full h-full"></div>
+              </div>
+
+              {/* Hidden form for Netlify */}
+              <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <input type="text" name="company" />
+                <input type="tel" name="phone" />
+                <textarea name="message"></textarea>
+              </form>
+
               <form 
+                onSubmit={handleSubmit}
+                className="space-y-6 relative"
                 name="contact"
                 method="POST"
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit}
-                className="space-y-6"
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="recipient" value="taylor@welkaenterprises.com" />
                 
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                    Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                    placeholder="John Doe"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2 group">
+                    <label htmlFor="name" className="flex items-center space-x-2 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                      <User className="w-4 h-4" />
+                      <span>Name</span>
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="border-blue-100 focus:border-blue-300 hover:border-blue-200 transition-colors"
+                      placeholder="John Doe"
+                    />
+                  </div>
+
+                  <div className="space-y-2 group">
+                    <label htmlFor="email" className="flex items-center space-x-2 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                      <Mail className="w-4 h-4" />
+                      <span>Email</span>
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="border-blue-100 focus:border-blue-300 hover:border-blue-200 transition-colors"
+                      placeholder="john@company.com"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                    placeholder="john@company.com"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2 group">
+                    <label htmlFor="company" className="flex items-center space-x-2 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                      <Building2 className="w-4 h-4" />
+                      <span>Company</span>
+                    </label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      required
+                      className="border-blue-100 focus:border-blue-300 hover:border-blue-200 transition-colors"
+                      placeholder="Your Company Name"
+                    />
+                  </div>
+
+                  <div className="space-y-2 group">
+                    <label htmlFor="phone" className="flex items-center space-x-2 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                      <Phone className="w-4 h-4" />
+                      <span>Phone Number</span>
+                    </label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="border-blue-100 focus:border-blue-300 hover:border-blue-200 transition-colors"
+                      placeholder="(555) 555-5555"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-2">
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                    Company
-                  </label>
-                  <Input
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    className="w-full"
-                    placeholder="Your Company Name"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Phone Number
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full"
-                    placeholder="(555) 555-5555"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                    Message
+                <div className="space-y-2 group">
+                  <label htmlFor="message" className="flex items-center space-x-2 text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
+                    <span>Message</span>
                   </label>
                   <Textarea
                     id="message"
@@ -152,7 +175,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full min-h-[150px]"
+                    className="min-h-[150px] border-blue-100 focus:border-blue-300 hover:border-blue-200 transition-colors"
                     placeholder="Tell us about your IT needs..."
                   />
                 </div>
@@ -160,7 +183,9 @@ const Contact = () => {
                 <div className="flex justify-center pt-4">
                   <Button 
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md transition-colors"
+                    className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 
+                             hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-blue-500/25
+                             px-8 py-2 text-lg font-semibold"
                   >
                     Send Message
                   </Button>
