@@ -78,9 +78,11 @@ const Navbar = () => {
             <Button 
               variant="default"
               className="bg-blue-600 hover:bg-blue-700 text-white"
-              onClick={() => scrollToSection('quote-section')}
+              asChild
             >
-              Contact Us
+              <Link to="/contact">
+                Contact Us
+              </Link>
             </Button>
           </div>
         </div>
