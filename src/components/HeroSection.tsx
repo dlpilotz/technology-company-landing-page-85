@@ -70,7 +70,7 @@ const HeroSection = () => {
           onLoadedData={handleVideoLoad}
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-servers-in-a-working-data-center-1584/1080p.mp4"
+            src="https://cdn.coverr.co/videos/coverr-close-up-of-server-led-lights-1584/1080p.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
