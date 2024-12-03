@@ -63,13 +63,14 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          crossOrigin="anonymous"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.3)' }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoad}
         >
           <source
-            src="/videos/datacenter.mp4"
+            src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
