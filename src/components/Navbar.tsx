@@ -26,7 +26,7 @@ const Navbar = () => {
           to="/" 
           className="flex items-center space-x-2 hover:opacity-90 transition-opacity"
         >
-          <img src="/logo.svg" alt="Welka Enterprises LLC" className="h-12 w-auto" />
+          <img src="/websitelogo.png" alt="Welka Enterprises LLC" className="h-12 w-auto" />
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
