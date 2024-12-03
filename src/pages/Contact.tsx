@@ -78,7 +78,7 @@ const Contact = () => {
               </div>
 
               {/* Hidden form for Netlify */}
-              <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+              <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
                 <input type="text" name="name" />
                 <input type="email" name="email" />
                 <input type="text" name="company" />
@@ -92,7 +92,7 @@ const Contact = () => {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                netlify-honeypot="bot-field"
+                data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="form-name" value="contact" />
                 
