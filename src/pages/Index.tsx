@@ -15,20 +15,20 @@ const Index = () => {
 
       {/* Features Section */}
       <section id="features" className="py-24 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
         {/* Subtle Glow Effects */}
         <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-400/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-blue-300/10 rounded-full blur-3xl"></div>
         
         <div className="container mx-auto relative z-10">
-          <h2 className="text-3xl font-mono font-bold mb-4 text-center text-white hover:scale-105 transition-transform">
-            /CAPABILITIES
-          </h2>
-          <p className="text-center text-blue-100 mb-16 max-w-2xl mx-auto">
-            Comprehensive IT solutions designed to protect, optimize, and scale your business infrastructure
-          </p>
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <h2 className="text-3xl font-mono font-bold mb-4 text-white hover:scale-105 transition-transform">
+              /CAPABILITIES
+            </h2>
+            <p className="text-blue-100 max-w-xl mx-auto">
+              Comprehensive IT solutions designed to protect, optimize, and scale your business infrastructure
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8 px-4">
             <FeatureCard
               title="Network Management"
@@ -49,7 +49,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust Indicators and Statistics Section */}
       <section className="py-24 bg-gradient-to-br from-blue-600 to-blue-800">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl font-mono font-bold text-white mb-4 hover:scale-105 transition-transform">

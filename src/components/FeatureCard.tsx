@@ -1,23 +1,27 @@
 import { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface FeatureCardProps {
+  icon: LucideIcon;
   title: string;
   description: string;
-  icon: LucideIcon;
 }
 
-const FeatureCard = ({ title, description, icon: Icon }: FeatureCardProps) => {
+const FeatureCard = ({ icon: Icon, title, description }: FeatureCardProps) => {
   return (
-    <div className="group relative overflow-hidden rounded-lg border bg-gradient-to-br from-white to-blue-50 p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-      <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-50 rounded-bl-full -z-10 transition-transform group-hover:scale-150 duration-300"></div>
-      <div className="flex items-center space-x-4">
-        <div className="rounded-full bg-blue-600/10 p-3 group-hover:bg-blue-600/20 transition-colors duration-300">
-          <Icon className="h-6 w-6 text-blue-600" />
-        </div>
-        <h3 className="font-semibold text-blue-900">{title}</h3>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="group bg-white/10 backdrop-blur-lg p-8 rounded-2xl hover:bg-white/15 transition-all duration-300 border border-white/10"
+    >
+      <div className="rounded-xl bg-white/10 w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
+        <Icon className="w-8 h-8 text-white" />
       </div>
-      <p className="mt-4 text-sm text-blue-600/80">{description}</p>
-    </div>
+      <h3 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-100 transition-colors">{title}</h3>
+      <p className="text-blue-100/80 leading-relaxed">{description}</p>
+    </motion.div>
   );
 };
 
