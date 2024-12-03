@@ -63,14 +63,13 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          crossOrigin="anonymous"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.3)' }}
           onError={handleVideoError}
           onLoadedData={handleVideoLoad}
         >
           <source
-            src="https://cdn.gpteng.co/videos/datacenter.mp4"
+            src="/videos/datacenter.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
