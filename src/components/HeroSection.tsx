@@ -34,9 +34,12 @@ const HeroSection = () => {
 
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.error("Video loading error:", e);
+    // Fall back to a static background color if video fails to load
+    const videoElement = e.target as HTMLVideoElement;
+    videoElement.style.display = 'none';
     toast({
       title: "Video Loading Error",
-      description: "Background video failed to load. Please refresh the page.",
+      description: "Using fallback background. Please try refreshing the page.",
       variant: "destructive"
     });
   };
@@ -52,7 +55,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen pt-32 pb-24 overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-24 overflow-hidden bg-blue-900">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <video
@@ -60,6 +63,7 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          crossOrigin="anonymous"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.3)' }}
           onError={handleVideoError}
