@@ -32,6 +32,19 @@ const HeroSection = () => {
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.error("Video loading error:", e);
+    toast({
+      title: "Video Loading Error",
+      description: "Background video failed to load. Please refresh the page.",
+      variant: "destructive"
+    });
+  };
+
+  const handleVideoLoad = () => {
+    console.log("Video loaded successfully");
+  };
+
   const stats = [
     { value: "99.9%", label: "Customer Satisfaction" },
     { value: "24/7", label: "Support" },
@@ -49,6 +62,8 @@ const HeroSection = () => {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
           style={{ filter: 'brightness(0.3)' }}
+          onError={handleVideoError}
+          onLoadedData={handleVideoLoad}
         >
           <source
             src="https://cdn.gpteng.co/videos/datacenter.mp4"
