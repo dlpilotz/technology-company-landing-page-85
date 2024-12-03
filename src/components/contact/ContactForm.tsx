@@ -20,7 +20,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }: ContactFormProps)
   return (
     <>
       {/* Hidden form for Netlify */}
-      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" netlify hidden>
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="company" />
