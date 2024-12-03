@@ -20,7 +20,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }: ContactFormProps)
   return (
     <>
       {/* Static form for Netlify detection - hidden */}
-      <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="text" name="company" />
@@ -34,6 +34,8 @@ const ContactForm = ({ formData, handleChange, handleSubmit }: ContactFormProps)
         method="POST"
         onSubmit={handleSubmit}
         className="space-y-6 relative"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="contact" />
         
