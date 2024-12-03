@@ -175,17 +175,6 @@ const Index = () => {
             <p className="text-sm text-blue-600">
               © 2024 Welka Enterprises LLC. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
-                Twitter
-              </a>
-              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
-                GitHub
-              </a>
-              <a href="#" className="text-blue-600 hover:text-blue-700 hover:scale-110 transition-transform">
-                Discord
-              </a>
-            </div>
           </div>
         </div>
       </footer>
