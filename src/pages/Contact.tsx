@@ -26,6 +26,7 @@ const Contact = () => {
       
       console.log("Form data:", Object.fromEntries(data.entries()));
       
+      // Let the form submission happen naturally - Netlify will handle it
       toast({
         title: "Message Sent",
         description: "We'll get back to you as soon as possible.",
@@ -77,7 +78,7 @@ const Contact = () => {
               </div>
 
               {/* Hidden form for Netlify */}
-              <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+              <form name="contact" netlify netlify-honeypot="bot-field" hidden>
                 <input type="text" name="name" />
                 <input type="email" name="email" />
                 <input type="text" name="company" />
@@ -91,10 +92,9 @@ const Contact = () => {
                 name="contact"
                 method="POST"
                 data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="recipient" value="taylor@welkaenterprises.com" />
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2 group">
