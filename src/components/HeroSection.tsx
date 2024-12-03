@@ -39,7 +39,25 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen pt-32 pb-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 animate-gradient overflow-hidden">
+    <section className="relative min-h-screen pt-32 pb-24 overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ filter: 'brightness(0.3)' }}
+        >
+          <source
+            src="https://cdn.gpteng.co/videos/datacenter.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -65,8 +83,6 @@ const HeroSection = () => {
         }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600/80 via-blue-700/80 to-blue-800/80" style={{ zIndex: 1 }}></div>
-      
       <div className="container relative mx-auto text-center text-white" style={{ zIndex: 2 }}>
         <div className="flex justify-center gap-8 mb-8">
           <Shield className="w-12 h-12 text-blue-200 animate-bounce" />
@@ -89,7 +105,7 @@ const HeroSection = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-white/10 p-6 rounded-lg backdrop-blur-sm transform hover:scale-105 transition-all duration-300"
+              className="bg-black/30 backdrop-blur-sm p-6 rounded-lg transform hover:scale-105 transition-all duration-300"
             >
               <div className="text-3xl font-bold mb-2 animate-fade-in-delayed opacity-0">
                 {stat.value}
