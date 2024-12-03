@@ -13,24 +13,43 @@ const QuoteSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submission started");
     console.log("Form data:", formData);
     
-    // Create a hidden form for Netlify
-    const form = e.target as HTMLFormElement;
-    const data = new FormData(form);
-    
-    console.log("FormData entries:", Array.from(data.entries()));
-    
-    // For Netlify forms, we don't need to manually submit - it handles the submission automatically
-    // The form will be processed by Netlify's form handling service
-    toast({
-      title: "Quote Request Received",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setFormData({ name: "", email: "", company: "", message: "" });
+    try {
+      const response = await fetch("https://formspree.io/f/xeoqvbdn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        toast({
+          title: "Quote Request Received",
+          description: "We'll get back to you within 24 hours.",
+        });
+        setFormData({ name: "", email: "", company: "", message: "" });
+      } else {
+        console.error("Form submission failed");
+        toast({
+          title: "Error",
+          description: "There was a problem sending your message. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -69,29 +88,11 @@ const QuoteSection = () => {
             />
           </div>
 
-          {/* Hidden form for Netlify form detection */}
-          <form name="quote-request" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-            <input type="text" name="name" />
-            <input type="email" name="email" />
-            <input type="text" name="company" />
-            <textarea name="message"></textarea>
-          </form>
-
           <form 
-            onSubmit={handleSubmit} 
-            className="space-y-6 relative"
-            name="quote-request"
+            onSubmit={handleSubmit}
             method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
+            className="space-y-6 relative"
           >
-            <input type="hidden" name="form-name" value="quote-request" />
-            <p className="hidden">
-              <label>
-                Don't fill this out if you're human: <input name="bot-field" />
-              </label>
-            </p>
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2 group">
                 <label htmlFor="name" className="text-sm font-medium text-blue-600 group-hover:text-blue-700 transition-colors">
