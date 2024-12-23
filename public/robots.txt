@@ -11,6 +11,11 @@ Crawl-delay: 10
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+Disallow: /tmp/
+Disallow: /dev/
+Disallow: /staging/
+Disallow: /*.pdf$
+Disallow: /*?*
 
 # Allow specific paths
 Allow: /products/
@@ -21,6 +26,13 @@ Allow: /resources/
 Allow: /locations/cleveland/
 Allow: /locations/akron/
 Allow: /locations/canton/
+Allow: /blog/
+Allow: /services/
+Allow: /contact/
 
 # Rate limiting
 Request-rate: 1/1s
+Visit-time: 0600-2200
+
+# Host
+Host: https://welkaenterprises.com
