@@ -3,6 +3,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://welkaenterprises.com/sitemap.xml
+Sitemap: https://welkaenterprises.com/languages.xml
 
 # Crawl-delay
 Crawl-delay: 10
@@ -16,6 +17,10 @@ Disallow: /dev/
 Disallow: /staging/
 Disallow: /*.pdf$
 Disallow: /*?*
+Disallow: /*/amp/
+Disallow: /*?fbclid=
+Disallow: /*?utm_*
+Disallow: /*?gclid=
 
 # Allow specific paths
 Allow: /products/
@@ -36,3 +41,13 @@ Visit-time: 0600-2200
 
 # Host
 Host: https://welkaenterprises.com
+
+# Additional crawl directives
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /fonts/

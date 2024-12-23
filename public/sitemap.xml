@@ -13,6 +13,18 @@
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://welkaenterprises.com/logo.svg</image:loc>
+      <image:title>Welka Enterprises Logo</image:title>
+      <image:caption>Premier IT Services in Cleveland, Akron & Canton</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://welkaenterprises.com/hero_video_thumb.jpg</video:thumbnail_loc>
+      <video:title>Welka Enterprises Services Overview</video:title>
+      <video:description>Overview of our IT services and solutions</video:description>
+      <video:content_loc>https://welkaenterprises.com/hero_video.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+    </video:video>
   </url>
 
   <!-- Main Service Pages -->

@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://welkaenterprises.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://welkaenterprises.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Locations",
+      "item": "https://welkaenterprises.com/locations"
+    }
+  ]
+}
