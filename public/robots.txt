@@ -18,6 +18,9 @@ Allow: /solutions/
 Allow: /case-studies/
 Allow: /about/
 Allow: /resources/
+Allow: /locations/cleveland/
+Allow: /locations/akron/
+Allow: /locations/canton/
 
 # Rate limiting
 Request-rate: 1/1s
